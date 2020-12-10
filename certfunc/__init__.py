@@ -34,7 +34,9 @@ class certFunc():
 				key=serialization.load_pem_private_key(pemData.encode(),password=password.encode())
 			else:
 				key=serialization.load_pem_private_key(pemData.encode(),password=None)
-		return(key.key_size)
+			return(key.key_size)
+		else:
+			return(0)
 
 	@staticmethod
 	def validatePfx(pfxData,password):
