@@ -1,0 +1,8 @@
+env
+.vscode
+*.swp
+.*
+t_*
+!.gitignore
+!.travis.yml
+__pycache__
