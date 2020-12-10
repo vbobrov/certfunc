@@ -1,11 +1,7 @@
-machine:
-  python:
-    version: 3.8
-
-dependencies:
-  override:
-    - pip install -r requirements.txt
-
-test:
-  override:
-    - python3 -m unittest tests/tests.py -v
+version: 2
+jobs:
+  test:
+    docker: circleci/python:3.8
+    steps:
+      - run: pip install -r requirements.txt
+      - run: python3 -m unittest tests/tests.py -v
