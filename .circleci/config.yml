@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  test:
+  build:
     docker: circleci/python:3.8
     steps:
       - checkout
