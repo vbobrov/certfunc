@@ -10,13 +10,14 @@ class TestCerts(unittest.TestCase):
 		file.close()
 		return(fileData)
 
-	def setUp(self):
-		self.validPassword='testing123'
-		self.validX509=self.loadTestFile('tests/www-cert.pem')
-		self.validPfx=self.loadTestFile('tests/www.p12',True)
-		self.validBase64Pfx=self.loadTestFile('tests/www-p12-base64.pem')
-		self.validRsaNoPwd=self.loadTestFile('tests/www-key-nopwd.pem')
-		self.validRsaPwd=self.loadTestFile('tests/www-key-pwd.pem')
+	@classmethod
+	def setUpClass(cls):
+		cls.validPassword='testing123'
+		cls.validX509=cls.loadTestFile(cls,'tests/www-cert.pem')
+		cls.validPfx=cls.loadTestFile(cls,'tests/www.p12',True)
+		cls.validBase64Pfx=cls.loadTestFile(cls,'tests/www-p12-base64.pem')
+		cls.validRsaNoPwd=cls.loadTestFile(cls,'tests/www-key-nopwd.pem')
+		cls.validRsaPwd=cls.loadTestFile(cls,'tests/www-key-pwd.pem')
 		
 
 	def testValidX509(self):
