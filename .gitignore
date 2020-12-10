@@ -5,4 +5,5 @@ env
 t_*
 !.gitignore
 !.travis.yml
+!.circleci
 __pycache__
